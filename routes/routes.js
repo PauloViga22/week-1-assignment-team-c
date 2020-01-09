@@ -1,19 +1,19 @@
 const express = require('express');
+const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 const data = [];
 
-router.get('/', (req,res,next) => {
-    res.send('index', {notes: data});
-    console.log(data);
+router.get('/', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '../views', 'index.html'));
 });
 
-router.get('/create', (req,res,next) => {
-    res.send('create');
+router.get('/create', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '../views', 'create.html'));
 });
 
 router.get('/list', (req,res,next) => {
-    res.render('list');
+    res.render('list', {notes: data});
 });
 
 router.post('/note', (req,res,next) =>{
