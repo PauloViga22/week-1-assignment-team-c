@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <div class="container">
+        <h1>View list</h1>
+        <p>
+            <a href="/">Home</a> / <a href="/create">Create</a>
+        </p>
+        <p>
+            <ul id="my-notes">
+                <% for(let i=0; i< notes.length; i++) { %>
+                <li>
+                    <ul>
+                        <li><%= notes[i].title %></li>
+                        <li><%= notes[i].content %></li>
+                        <li><%= notes[i].published %></li>
+                    </ul>
+                </li>
+                <% } %>
+            </ul>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
