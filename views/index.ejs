@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create a Note</h1>
+        <p>
+            <a href="/">Home</a> / <a href="/list">List</a>
+        </p>
+        <p>
+            <form action="/note" method="post">
+
+                <input name="title" id="title" type="text" placeholder="Enter a New Title" required><br /><br />
+                <textarea id="body" name="body" class="text_area" rows="10" placeholder="Enter a Note"
+                    required></textarea><br />
+
+                <input type="submit" class="submit_btn" value="Post Entry">
+            </form>
+            <ul id="my-notes">
+                <% for(let i=0; i< notes.length; i++) { %>
+                <li>
+                    <ul>
+                        <li><%= notes[i].title %></li>
+                        <li><%= notes[i].content %></li>
+                        <li><%= notes[i].published %></li>
+                    </ul>
+                </li>
+                <% } %>
+            </ul>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
