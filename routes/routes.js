@@ -33,7 +33,7 @@ router.get("/list", (req, res, next) => {
     if (!err) {
       try {
         notes = JSON.parse(data);
-        console.log("what is this oneeeeeeee", notes);
+        // console.log("what is this oneeeeeeee", notes);
       } catch (e) {
         fs.writeFileSync("notes.txt", []);
         notes = [];
