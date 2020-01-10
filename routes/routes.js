@@ -8,6 +8,12 @@ const data = [{
   "published": "2020-01-09T23:59:05.924Z",
   "likes": 0
 }];
+let options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+};
 
 router.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../views', 'index.html'));
@@ -38,8 +44,9 @@ router.post('/note', (req, res, next) => {
   let myNewEntry = {
     name: req.body.name,
     content: req.body.body,
-    published: new Date(),
-    likes: 0
+    published: new Date().toLocaleDateString("en-US", options),
+    upvotes: 0,
+    downvotes: 0
   };
 
   data.push(myNewEntry);

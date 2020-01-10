@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +7,68 @@
 
 body {
     background-color: black;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(75, 75, 75);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    -webkit-filter: drop-shadow(0px 0px 5px rgb(117, 117, 117));
+    filter: drop-shadow(0px 0px 5px rgb(117, 117, 117));
 }
 
 .container {
+    height: 100vh;
+    width: 100%;
+}
+
+#bgVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.content {
+    background: url('index_content_bg.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     padding: 50px;
 }
 
+.left_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+}
+
+.left_content_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+    padding-top: 20px;
+    overflow: scroll;
+}
+
 a {
-    color: yellow;
+    color: rgb(255, 0, 0);
 }
 
 label {
@@ -23,24 +76,28 @@ label {
 }
 
 h1 {
-    font-size: 46px;
-    color: yellow;
-    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 72px;
+    color: black;
+}
+
+h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: black;
+    padding: 0 10px;
 }
 
 p {
-    padding: 20px;
-    color: white;
-    text-align: center;
+    font-size: 18px;
 }
 
-ul{
-    color: white;
+ul {
+    /* color: white; */
 }
 
 form {
     width: 100%;
-    text-align: center;
 }
 
 input {
@@ -50,17 +107,108 @@ input {
 }
 
 .submit_btn {
-    background-color: #6BBE92;
+    background-color: yellow;
     width: 300px;
     border: 0;
     padding: 10px 0;
     margin: 5px 0;
     text-align: center;
-    color: #fff;
+    color: black;
     font-weight: bold;
+}
+
+.home_buttons{
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 0.6em;
+    color: red;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px 20px 20px 0;
+    padding: 1.2em .8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.first {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.first:hover {
+    box-shadow: 0 0 40px 40px red inset;
+}
+
+.btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
 }
 
 .text_area {
     width: 300px;
     padding: 5px;
 }
+
+
+/******** CARD **********/
+.card-item{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 4px 9px #f1f1f4;
+    margin-bottom: 20px;
+}
+
+.card_content{
+    width: 100%;
+}
+        
+.card_content_title{
+    color: #4a4545;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -.18px;
+    line-height: 24px;
+}
+
+.card_content_votes{
+    
+}
+            
+.card_content_description{
+    color: #696d74;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: normal;
+    line-height: 24px;
+    margin: 0 0 10px 0;
+}
+
+.card_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vote_button{
+    height: 20px;
+}
+
+.vote_button:hover{
+    cursor: pointer;
+}
+            
