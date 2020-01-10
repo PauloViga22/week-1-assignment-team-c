@@ -26,9 +26,7 @@ router.get('/list', (req, res, next) => {
 });
 
 router.post('/note', (req, res, next) => {
-  let id = 0;
   let myNewEntry = {
-    id: id++,
     name: req.body.name,
     content: req.body.body,
     published: new Date(),
