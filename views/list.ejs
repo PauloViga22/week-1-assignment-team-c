@@ -20,6 +20,7 @@
       <div class="left_content_list">
         <h1>Wish List</h1>
         <br />
+        <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
         <% for(let i=0; i< notes.length; i++) { %>
         <div class="card-item">
           <div class="card_content">
@@ -28,7 +29,7 @@
             </p>
             <div class="card_bottom">
               <div>
-                <span class="card_content_title"><%= notes[i].name %></span> - <span class="card_content_date"><%= notes[i].published %></span>
+                <span class="card_content_title"><%= notes[i].name %></span> - <span class="card_content_date"><%= notes[i].published.toLocaleDateString("en-US", options) %></span>
               </div>
               
               <div class="card_content_votes">
