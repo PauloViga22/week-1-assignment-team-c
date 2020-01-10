@@ -45,4 +45,18 @@ router.post('/note', (req, res, next) => {
   // res.redirect('/');
 });
 
+let content
+let tst = () => {
+  fs.readFile(path.join(__dirname, "../notes.txt"), 'utf-8', (err, data) => {
+    if (err) {
+      throw err
+    }
+    content = JSON.stringify(data)
+    console.log("test", content)
+    console.log(data)
+  });
+}
+
+tst()
+
 module.exports = router;
