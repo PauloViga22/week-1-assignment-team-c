@@ -1,1 +1,3 @@
-[{"name":"Clark Kent","content":"I need a new shirt","published":"2020-01-10T22:30:53.236Z","upvotes":0,"downvotes":0}]
+
+.{"name":"hello","content":"lolo","published":"Friday, January 10, 2020","upvotes":0,"downvotes":0}.{"name":"lo","content":"lolo","published":"Friday, January 10, 2020","upvotes":0,"downvotes":0}
+

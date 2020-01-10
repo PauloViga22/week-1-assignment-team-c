@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Make a Wish - List</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Make a Wish - List</title>
-  <link rel='stylesheet' type='text/css' href='style.css'>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <header>
+          <div class="">
+            <a href="/"
+              ><img src="logo.png" class="logo" height="100px" alt="home_logo"
+            /></a>
+          </div>
+          <h3>Ho! Ho!</h3>
+        </header>
+        <div class="left_content_list">
+          <h1>Wish List</h1>
+          <br />
+          <% for(let i=0; i< notes.length; i++) { %>
+          <div class="card-item">
+            <div class="card_content">
+              <p class="card_content_description">
+                <%= JSON.parse(notes[i]).content %>
+              </p>
+              <div class="card_bottom">
+                <div>
+                  <span class="card_content_title"
+                    ><%= JSON.parse(notes[i]).name %></span
+                  >
+                  - <%= JSON.parse(notes[i]).published %>
+                </div>
 
-<body>
-  <div class="container">
-    <div class="content">
-      <header>
-        <div class=""><a href="/"><img src="logo.png" class="logo" height="100px" alt="home_logo"></a></div>
-        <h3>Ho! Ho!</h3>
-      </header>
-      <div class="left_content_list">
-        <h1>Wish List</h1>
-        <br />
-        <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
-        <% for(let i=0; i< notes.length; i++) { %>
-        <div class="card-item">
-          <div class="card_content">
-            <p class="card_content_description">
-              <%= notes[i].content %>
-            </p>
-            <div class="card_bottom">
-              <div>
-                <span class="card_content_title"><%= notes[i].name %></span> - <span class="card_content_date"><%= notes[i].published.toLocaleDateString("en-US", options) %></span>
-              </div>
-              
-              <div class="card_content_votes">
-                <a id="voteUp"><img src="thumbs-up.png" class="vote_button" alt="thumbs-up"></a> <%= notes[i].upvotes %> Likes
-                &nbsp;&nbsp;
-                <a id="voteDown"><img src="thumbs-down.png" class="vote_button" alt="thumbs-down"></a><%= notes[i].downvotes %> Dislikes
+                <div class="card_content_votes">
+                  <a id="voteUp"
+                    ><img
+                      src="thumbs-up.png"
+                      class="vote_button"
+                      alt="thumbs-up"
+                  /></a>
+                  <%= JSON.parse(notes[i]).upvotes %> &nbsp;&nbsp;
+                  <a id="voteDown"
+                    ><img
+                      src="thumbs-down.png"
+                      class="vote_button"
+                      alt="thumbs-down"/></a
+                  ><%= JSON.parse(notes[i]).downvotes %>
+                </div>
+
               </div>
             </div>
-
           </div>
+          <% } %>
         </div>
-        <% } %>
-
+        <footer>
+          <a href="https://github.com/wadp413-January/week-1-assignment-team-c"
+            ><img src="github_icon.png" height="30px" alt="github_logo"/></a
+          ><br />
+          &copy; Copyright 2020. Team C
+        </footer>
       </div>
-      <footer>
-        <a href="https://github.com/wadp413-January/week-1-assignment-team-c"><img src="github_icon.png" height="30px"
-            alt="github_logo"></a><br />
-        &copy; Copyright 2020. Team C
-      </footer>
+      <video height="100%" autoplay muted loop id="bgVideo">
+        <source src="bg_video.mp4" type="video/mp4" />
+      </video>
     </div>
-    <video height="100%" autoplay muted loop id="bgVideo">
-      <source src="bg_video.mp4" type="video/mp4">
-    </video>
-  </div>
 
-  <script src="script.js"></script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
