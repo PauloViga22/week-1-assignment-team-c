@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
+
 const data = [{
   "name": "das",
   "content": "das",
@@ -10,6 +11,7 @@ const data = [{
   "upvotes": 0,
   "downvotes": 0
 }];
+
 let options = {
   weekday: 'long',
   year: 'numeric',
@@ -54,8 +56,9 @@ router.post('/note', (req, res, next) => {
   let myNewEntry = {
     name: req.body.name,
     content: req.body.body,
-    published: new Date().toLocaleDateString("en-US", options),
-    likes: 0
+    published: new Date(),
+    upvotes: 0,
+    downvotes: 0
   };
   console.log("old data", data)
   data.push(myNewEntry);
@@ -95,7 +98,7 @@ router.post('/like', (req, res, next) => {
     data = notes
 
   });
-  
+
 })
 
 

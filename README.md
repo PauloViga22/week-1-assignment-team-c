@@ -84,5 +84,5 @@ A common way to update is by doing
 
 ## Authors
 
-List of [contributors](https://github.com/wadp413-January/week-1-assignment-team-c/graphs/contributors) who participated in this project.
+List of [members](https://github.com/orgs/wadp413-January/teams/team-c) who participated in this project.
 
