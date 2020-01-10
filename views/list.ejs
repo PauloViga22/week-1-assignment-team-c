@@ -2,37 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>List</title>
-  <link rel='stylesheet' type='text/css' href='style.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Make a Wish - List</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 
 <body>
-  <div class="container">
-    <h1>View list</h1>
-    <p>
-      <a href="/">Home</a> / <a href="/create">Create</a>
-    </p>
-    <p>
-      <ul>
-        <% for(let i=0; i< notes.length; i++) { %>
-        <li>
-          <ul>
-            <li><%= notes[i].name %></li>
-            <li><%= notes[i].content %></li>
-            <li><%= notes[i].published %></li>
-            <li> 👍<a id="voteUp">upvote</a> <%= notes[i].upvotes %></li>
-            <li> 👎<a id="voteDown">downvote</a> <%= notes[i].downvotes %></li>
-          </ul>
-        </li>
-        <% } %>
-      </ul>
-    </p>
-  </div>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <div class="content">
+            <header>
+                <div class=""><a href="/"><img src="logo.png" class="logo" height="100px" alt="home_logo"></a></div>
+                <h3>Ho! Ho!</h3>
+            </header>
+            <div class="left_content">
+                <h1>Wish List</h1>
+                <ul>
+                  <% for(let i=0; i< notes.length; i++) { %>
+                  <li>
+                    <ul>
+                      <li><%= notes[i].name %></li>
+                      <li><%= notes[i].content %></li>
+                      <li><%= notes[i].published %></li>
+                      <li> 👍<a id="voteUp">upvote</a> <%= notes[i].upvotes %></li>
+                      <li> 👎<a id="voteDown">downvote</a> <%= notes[i].downvotes %></li>
+                    </ul>
+                  </li>
+                  <% } %>
+                </ul>
+                
+            </div>
+            <footer>
+                <a href="https://github.com/wadp413-January/week-1-assignment-team-c"><img src="github_icon.png" height="30px" alt="github_logo"></a><br/>
+                &copy; Copyright 2020. Team C
+            </footer>
+        </div>
+        <video height="100%" autoplay muted loop id="bgVideo">
+            <source src="bg_video.mp4" type="video/mp4">
+        </video>
+    </div>
+   
+    <script src="script.js"></script>
 
 </body>
 
