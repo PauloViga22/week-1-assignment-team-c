@@ -3,8 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 var data = [{
-  "id": 0,
-  "title": "das",
+  "name": "das",
   "content": "das",
   "published": "2020-01-09T23:59:05.924Z",
   "upvotes": 0,
@@ -26,9 +25,7 @@ router.get('/list', (req, res, next) => {
 });
 
 router.post('/note', (req, res, next) => {
-  let id = 0;
   let myNewEntry = {
-    id: id++,
     name: req.body.name,
     content: req.body.body,
     published: new Date(),
