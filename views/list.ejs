@@ -2,35 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>List</title>
-    <link rel='stylesheet' type='text/css' href='style.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>List</title>
+  <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 
 <body>
-    <div class="container">
-        <h1>View list</h1>
-        <p>
-            <a href="/">Home</a> / <a href="/create">Create</a>
-        </p>
-        <p>
-            <ul id="my-notes">
-                <% for(let i=0; i< notes.length; i++) { %>
-                <li>
-                    <ul>
-                        <li><%= notes[i].title %></li>
-                        <li><%= notes[i].content %></li>
-                        <li><%= notes[i].published %></li>
-                    </ul>
-                </li>
-                <% } %>
-            </ul>
-        </p>
-    </div>
+  <div class="container">
+    <h1>View list</h1>
+    <p>
+      <a href="/">Home</a> / <a href="/create">Create</a>
+    </p>
+    <p>
+      <ul>
+        <% for(let i=0; i< notes.length; i++) { %>
+        <li>
+          <ul>
+            <li><%= notes[i].name %></li>
+            <li><%= notes[i].content %></li>
+            <li><%= notes[i].published %></li>
+            <li> 👍<a id="voteUp">upvote</a> <%= notes[i].upvotes %></li>
+            <li> 👎<a id="voteDown">downvote</a> <%= notes[i].downvotes %></li>
+          </ul>
+        </li>
+        <% } %>
+      </ul>
+    </p>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
