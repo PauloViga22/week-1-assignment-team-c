@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
-var data = [{
+const data = [{
   "name": "das",
   "content": "das",
   "published": "2020-01-09T23:59:05.924Z",
