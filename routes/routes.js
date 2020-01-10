@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const router = express.Router();
+
 const { appendFile, readFile } = require("../utlils");
 const data = [
   // {
@@ -53,7 +54,7 @@ router.post("/note", (req, res, next) => {
   let myNewEntry = {
     name: req.body.name,
     content: req.body.body,
-    published: new Date().toLocaleDateString("en-US", options),
+    published: new Date(),
     upvotes: 0,
     downvotes: 0
   };
