@@ -76,9 +76,9 @@ A common way to update is by doing
 
 ## Dependencies
 
-[body-parser](https://github.com/expressjs/body-parser)
-[ejs](https://github.com/mde/ejs)
-[nodemon](https://github.com/remy/nodemon)
+####[body-parser](https://github.com/expressjs/body-parser)
+####[ejs](https://github.com/mde/ejs)
+####[nodemon](https://github.com/remy/nodemon)
 
 ---
 
