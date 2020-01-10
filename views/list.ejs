@@ -23,6 +23,7 @@
         <div class="left_content_list">
           <h1>Wish List</h1>
           <br />
+          <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
           <% for(let i=0; i< notes.length; i++) { %>
           <div class="card-item">
             <div class="card_content">
@@ -34,7 +35,7 @@
                   <span class="card_content_title"
                     ><%= JSON.parse(notes[i]).name %></span
                   >
-                  - <%= JSON.parse(notes[i]).published %>
+                  - <%= JSON.parse(notes[i]).published.toLocaleDateString("en-US", options) %>
                 </div>
 
                 <div class="card_content_votes">
