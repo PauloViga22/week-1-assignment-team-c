@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
+
 const data = [{
   "name": "das",
   "content": "das",
@@ -9,6 +10,7 @@ const data = [{
   "upvotes": 0,
   "downvotes": 0
 }];
+
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 router.get('/', (req, res, next) => {

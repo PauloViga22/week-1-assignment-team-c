@@ -9,6 +9,7 @@ body {
     background-color: black;
     font-family: 'Montserrat', sans-serif;
     color: rgb(75, 75, 75);
+    font-size: 18px;
 }
 
 header {
@@ -88,39 +89,13 @@ h3 {
     padding: 0 10px;
 }
 
-p {
-    font-size: 18px;
-}
+/******** BUTTONS **********/
 
-ul {
-    /* color: white; */
-}
-
-form {
-    width: 100%;
-}
-
-input {
-    width: 300px;
-    height: 50px;
-    padding: 5px;
-}
-
-.submit_btn {
-    background-color: yellow;
-    width: 300px;
-    border: 0;
-    padding: 10px 0;
-    margin: 5px 0;
-    text-align: center;
-    color: black;
-    font-weight: bold;
-}
-
-.home_buttons{
+.home_buttons {
     display: flex;
     flex-direction: row;
 }
+
 .btn {
     box-sizing: border-box;
     appearance: none;
@@ -131,6 +106,7 @@ input {
     cursor: pointer;
     display: flex;
     align-self: center;
+    justify-content: center;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
@@ -156,14 +132,37 @@ input {
     outline: 0;
 }
 
-.text_area {
-    width: 300px;
-    padding: 5px;
+/******** FORM **********/
+
+form {
+    width: 80%;
 }
 
+form input, form textarea {
+    border: 0;
+    outline: 0;
+    padding: 1em;
+    height: 50px;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 16px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+form input:focus, form textarea:focus {
+    box-shadow: 0 0px 2px rgba(255, 0, 0, 1) !important;
+}
+
+form textarea {
+    height: 126px;
+}
 
 /******** CARD **********/
-.card-item{
+
+.card-item {
     width: 100%;
     padding: 20px;
     border-radius: 10px;
@@ -174,11 +173,11 @@ input {
     margin-bottom: 20px;
 }
 
-.card_content{
+.card_content {
     width: 100%;
 }
-        
-.card_content_title{
+
+.card_content_title {
     color: #4a4545;
     font-size: 16px;
     font-weight: 600;
@@ -186,11 +185,23 @@ input {
     line-height: 24px;
 }
 
-.card_content_votes{
-    
+.card_content_title::first-letter {
+    /* text-transform: capitalize; */
+    font-size: 230%;
 }
-            
-.card_content_description{
+
+.card_content_date {
+    color: #857b7b;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -.18px;
+    line-height: 24px;
+}
+
+.card_content_votes {}
+
+.card_content_description {
     color: #696d74;
     font-size: 22px;
     font-weight: 200;
@@ -199,16 +210,15 @@ input {
     margin: 0 0 10px 0;
 }
 
-.card_bottom{
+.card_bottom {
     display: flex;
     justify-content: space-between;
 }
 
-.vote_button{
+.vote_button {
     height: 20px;
 }
 
-.vote_button:hover{
+.vote_button:hover {
     cursor: pointer;
 }
-            
