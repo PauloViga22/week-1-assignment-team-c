@@ -9,7 +9,6 @@ voteUp.addEventListener("click", (ele) => {
   console.log("clicked")
   voteUp.innerHTML = pressed++;
   voteUp.parentElement.innerText = "👍 😊"
-  console.log(voteUp.parentElement);
 })
 
 voteDown.addEventListener("click", (ele) => {
