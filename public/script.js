@@ -10,5 +10,3 @@ voteUp.addEventListener("click", (ele) => {
 
   console.log(voteUp.parentElement);
 })
-
-console.log("data", data);
