@@ -56,8 +56,19 @@ header {
     width: 35%;
 }
 
+.left_content_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+    padding-top: 20px;
+    overflow: scroll;
+}
+
 a {
-    color: yellow;
+    color: rgb(255, 0, 0);
 }
 
 label {
@@ -149,3 +160,55 @@ input {
     width: 300px;
     padding: 5px;
 }
+
+
+/******** CARD **********/
+.card-item{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 4px 9px #f1f1f4;
+    margin-bottom: 20px;
+}
+
+.card_content{
+    width: 100%;
+}
+        
+.card_content_title{
+    color: #4a4545;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -.18px;
+    line-height: 24px;
+}
+
+.card_content_votes{
+    
+}
+            
+.card_content_description{
+    color: #696d74;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: normal;
+    line-height: 24px;
+    margin: 0 0 10px 0;
+}
+
+.card_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vote_button{
+    height: 20px;
+}
+
+.vote_button:hover{
+    cursor: pointer;
+}
+            
