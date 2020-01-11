@@ -43,7 +43,7 @@ router.post('/note', (req, res, next) => {
     let myNewEntry = {
       name: req.body.name,
       content: req.body.body,
-      published: new Date(),
+      published: new Date().toLocaleDateString("en-US", options),
       upvotes: 0,
       downvotes: 0
     };
