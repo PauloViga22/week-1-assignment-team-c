@@ -8,6 +8,4 @@ const appendFile = (path, data) => {
   });
 };
 
-const readFile = path => {};
-
-module.exports = { appendFile, readFile };
+module.exports = { appendFile };

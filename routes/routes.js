@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const router = express.Router();
-const { appendFile, readFile } = require("../utlils");
+const { appendFile } = require("../utlils");
 const data = [
   // {
   //   name: "das",
@@ -12,6 +12,11 @@ const data = [
   //   downvotes: 0
   // }
 ];
+
+const initialData = [
+  { name: "", content: "", published: "", upvotes: 0, downvotes: 0 }
+];
+
 let options = {
   weekday: "long",
   year: "numeric",
@@ -27,20 +32,16 @@ router.get("/create", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../views", "create.html"));
 });
 
-router.get("/list", async (req, res, next) => {
+router.get("/list", (req, res, next) => {
   let rowFileData = "";
-  fs.readFile("notes.txt", "utf8", async (err, data) => {
-    //エラーの場合はエラーを投げてくれる
+  fs.readFile("notes.txt", "utf8", (err, data) => {
     if (err) {
       throw err;
     }
     rowFileData = data;
     if (rowFileData.slice(0, 1) === ".") {
       const arrData = rowFileData.slice(1).split(".");
-      // const arrData = fileData.split(".");
-      if (!arrData.length) {
-        res.render("list", { notes: [] });
-      } else {
+      if (arrData.length > 0) {
         res.render("list", {
           notes: arrData
         });
